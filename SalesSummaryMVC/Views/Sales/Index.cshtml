@@ -1,0 +1,27 @@
+
+@model List<Sale>
+
+<h1 >Sales Summary</h1>
+<div >
+    <table border="1" border-style="Solid">
+        <thead >
+            <tr bgcolor="Blue"  border-style="Solid">
+                <th scope="col">Product Name</th>
+                <th scope="col">Quantity Sold</th>
+                <th scope="col">Sale Amount</th>
+                <th scope="col">Sale Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sale in Model)
+            {
+                <tr background-color: #96D4D4;>
+                    <td>@sale.ProductName</td>
+                    <td>@sale.QuantitySold</td>
+                    <td>@sale.SaleAmount.ToString("C")</td>
+                    <td>@sale.SaleDate.ToString("MMMM dd, yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
